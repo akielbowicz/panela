@@ -1,6 +1,4 @@
-
 from abc import ABC, abstractmethod
-import re
 
 class Funcion(ABC):
 
@@ -36,3 +34,17 @@ class Operacion(Funcion):
 class InversaAditiva(Operacion):
 
     def op(self, valor): return -valor
+
+# InversaMultiplicativa
+# Derivada
+# Integral
+# Cache
+# Composicion
+    # Log
+    # Exp
+
+# OperacionBinaria
+# Suma
+# Multiplicacion
+# Max
+# Min
