@@ -35,16 +35,6 @@ class InversaAditiva(Operacion):
 
     def op(self, valor): return -valor
 
-# InversaMultiplicativa
-# Derivada
-# Integral
-# Cache
-# Composicion
-    # Log
-    # Exp
+class InversaMultiplicativa(Operacion):
 
-# OperacionBinaria
-# Suma
-# Multiplicacion
-# Max
-# Min
+    def op(self, valor): return 1/valor
