@@ -26,5 +26,9 @@ def test_SiEs():
     f = Falso()
     assert v.SiEsVerdadero(lambda : 1) == 1
     assert v.SiEsFalso(lambda : 1) == None
+    assert v.SiEs(lambda : 1, lambda : None) == 1
+
     assert f.SiEsVerdadero(lambda : 1) == None
     assert f.SiEsFalso(lambda : 1) == 1
+    assert f.SiEs(lambda : None, lambda: 1) == 1
+    

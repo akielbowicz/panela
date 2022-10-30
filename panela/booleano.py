@@ -18,6 +18,10 @@ class Booleano(ABC):
     def SiEsFalso(self, bloque):
         pass
 
+    @abstractmethod
+    def SiEs(self, bloqueSiV, bloqueSiF):
+        pass
+
     def __eq__(self, __o: object) -> bool:
         return type(self) == type(__o)
 
@@ -39,7 +43,10 @@ class Verdadero(Booleano):
         return bloque()
 
     def SiEsFalso(self, bloque):
-        return super().SiEsFalso(bloque)
+        return
+
+    def SiEs(self, bloqueSiV, bloqueSiF):
+        return bloqueSiV()
 
 class Falso(Booleano):
 
@@ -53,7 +60,10 @@ class Falso(Booleano):
         return otro
 
     def SiEsVerdadero(self, bloque):
-        return super().SiEsVerdadero(bloque)
+        return
 
     def SiEsFalso(self, bloque):
         return bloque()
+
+    def SiEs(self, bloqueSiV, bloqueSiF):
+        return bloqueSiF()
