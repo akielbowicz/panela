@@ -1,6 +1,14 @@
 from abc import ABC, abstractmethod
+from gettext import install
 
 class Booleano(ABC):
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance:
+           raise Exception("Usar verdadero.")
+        cls._instance = super().__new__(cls)
+        return cls._instance
     
     @abstractmethod
     def Negar(self):
@@ -31,7 +39,7 @@ class Booleano(ABC):
 class Verdadero(Booleano):
 
     def Negar(self):
-        return Falso()
+        return falso
 
     def Y(self, otro):
         return otro
@@ -51,7 +59,7 @@ class Verdadero(Booleano):
 class Falso(Booleano):
 
     def Negar(self):
-        return Verdadero()
+        return verdadero
 
     def Y(self, otro):
         return self
@@ -67,3 +75,6 @@ class Falso(Booleano):
 
     def SiEs(self, bloqueSiV, bloqueSiF):
         return bloqueSiF()
+
+verdadero = Verdadero()
+falso = Falso()
