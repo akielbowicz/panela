@@ -1,10 +1,19 @@
-x = """Edificacion,Id,Tipo,Consumo
-       casa,         0, domestico,3.
-       departamento, 1, domestico,11.4
-       departamento, 2, comercial,0.1
-       departamento, 3, oficina,10.0
-       casa,         4, oficina,1.0
-    """
+documento_agua = """Edificacion, Id,      Tipo, Consumo
+casa,         0, domestico, 3.1
+departamento, 1, domestico, 11.4
+departamento, 2, comercial, 0.1
+departamento, 3,   oficina, 10.0
+casa,         4,   oficina, 1.0
+"""
+
+documento_luz = """Edificacion, Id,      Tipo, Consumo
+        casa, A0, domestico, 6.1
+departamento, A1, domestico, 22.4
+departamento, A2, comercial, 0.2
+departamento, A3,   oficina, 20.0
+        casa, A4,   oficina, 2.0
+    edificio, A5,   oficina, 123.0
+"""
 
 precios = {"oficina": 0.8, "comercial": 5.0, "domestico": 1.0}
 
@@ -37,8 +46,8 @@ def main(documento):
             else:
                 print("desconocido")
     print(f"Consumo total: {total}")
-
+    return total
 
 if __name__ == "__main__":
-    for _ in range(10000):
-        main(x)
+    main(documento_agua)
+    main(documento_luz)
