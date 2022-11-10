@@ -15,3 +15,12 @@ def test_cobro_de_Electricidad():
 def test_cobro_de_Gas():
     assert Gas().cobrar(casa) == 100.0
     assert Gas().cobrar(departamento) == 0.1
+
+def test_cobro_varios_servicios():
+    servicios = [Agua(), Gas(), Electricidad()]
+    edificaciones = [casa, departamento]
+    for servicio in servicios:
+        total = 0
+        for edificacion in edificaciones:
+            total =+ servicio.cobrar(edificacion)
+        assert total > 0
